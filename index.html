@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betty's game</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        
+        #sec1 {
+            position: absolute;
+            background: rgba(61, 60, 60, 0);
+            width: 300px;
+            height: 400px;
+            z-index: 1;
+        }
+        
+        #block1 {
+            height: 100px;
+            width: 200px;
+            background: black;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+        }
+        
+        #block2 {
+            height: 30px;
+            width: 30px;
+            background: black;
+            position: absolute;
+            top: 200px;
+            left: 70px;
+        }
+        
+        #block3 {
+            height: 100px;
+            width: 50px;
+            background: black;
+            position: absolute;
+            top: 110px;
+            left: 250px;
+        }
+        
+        #block4 {
+            height: 50px;
+            width: 100px;
+            background: black;
+            position: absolute;
+            top: 110px;
+            left: 250px;
+        }
+        
+        #block5 {
+            height: 5px;
+            width: 5px;
+            background: white;
+            position: absolute;
+            top: 130px;
+            left: 280px;
+        }
+        
+        #block6 {
+            height: 50px;
+            width: 30px;
+            background: black;
+            position: absolute;
+            top: 300px;
+            left: 250px;
+        }
+        
+        #block7 {
+            height: 50px;
+            width: 30px;
+            background: black;
+            position: absolute;
+            top: 300px;
+            left: 120px;
+        }
+        
+        #block8 {
+            height: 70px;
+            width: 30px;
+            background: black;
+            position: absolute;
+            top: 330px;
+            left: 110px;
+        }
+        
+        #block9 {
+            height: 70px;
+            width: 30px;
+            background: black;
+            position: absolute;
+            top: 330px;
+            left: 240px;
+        }
+        
+        #block10 {
+            position: absolute;
+            width: 13px;
+            height: 50px;
+            left: 250px;
+            top: 60px;
+            background: black;
+        }
+        
+        #water {
+            position: absolute;
+            left: 800px;
+            top: 500px;
+            background: blue;
+            width: 150px;
+            height: 150px;
+            z-index: -1;
+        }
+        
+        #grass {
+            background: green;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 750px;
+            top: 200px;
+            z-index: -1;
+        }
+        
+        #meat {
+            background: rgb(29, 78, 6);
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 950px;
+            top: 120px;
+            z-index: -1;
+        }
+        
+        #study {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            background: burlywood;
+            left: 450px;
+            top: 450px;
+            z-index: -1;
+        }
+        
+        #playing {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            background: orange;
+            left: 200px;
+            top: 100px;
+        }
+        
+        #pogladit {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            background: pink;
+            left: 200px;
+            top: 700px;
+        }
+        
+        #cutting {
+            width: 150px;
+            height: 150px;
+            background: yellow;
+            position: absolute;
+            left: 700px;
+            top: 700px;
+        }
+        
+        #miniMessenger {
+            padding: 10px;
+            float: right;
+            margin-top: 18.8%;
+            width: 400px;
+            height: 600px;
+            overflow: scroll;
+            background: linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+            border-left: 3px solid rgba(0, 0, 0, 0.58);
+            border-top: 3px solid rgba(0, 0, 0, 0.58);
+            font-size: 22px;
+        }
+        
+        #btn {
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            background: white;
+            top: 31%;
+            left: 77.5%;
+            text-align: center;
+            font-size: 25px;
+        }
+        #btn:hover{
+            background: black;
+            color: white;
+            transition-duration: 1s;
+        }
+        /*#block11{
+    position: absolute;
+    left: 250px;
+    top: 60px;
+    width: 7px;
+    height: 60px;
+    transform: rotate(90deg);
+    background: black;
+}*/
+    </style>
+    <section id="sec1">
+        <div id="block1"></div>
+        <div id="block2"></div>
+        <div id="block3"></div>
+        <div id="block4"></div>
+        <div id="block5"></div>
+        <div id="block6"></div>
+        <div id="block7"></div>
+        <div id="block8"></div>
+        <div id="block9"></div>
+        <div id="block10"></div>
+        <div id="block11"></div>
+        <div id="block12"></div>
+        <div id="block13"></div>
+        <div id="block14"></div>
+        <div id="block15"></div>
+        <div id="block10"></div>
+        <div id="block11"></div>
+    </section>
+    <div id="water"></div>
+    <div id="grass"></div>
+    <div id="meat"></div>
+    <div id="study"></div>
+    <div id="playing"></div>
+    <div id="pogladit"></div>
+    <div id="cutting"></div>
+    <div id="miniMessenger"></div>
+    <div id="btn">CLEAN</div>
+    <!--<div id="overley">
+        <div id="okno">
+            <div id="krest"></div>
+            <div id="ok">OK</div>
+        </div>
+    </div>-->
+    <script>
+        let water = document.getElementById('water');
+        let fon = document.getElementById('sec1')
+        let lol1 = Math.floor(Math.random() * 57) + 1 + "%"; //65
+        let lol2 = Math.floor(Math.random() * 57) + 1 + "%";
+        fon.style.left = lol1 //Math.floor(Math.random() * 65) + 1 + "%";//1000
+        fon.style.top = lol2 //Math.floor(Math.random() * 57) + 1 + "%"; //500
+        console.log(lol1); /*Math.floor(Math.random() * 65) + 1 + "%"*/
+        console.log(lol2); /*Math.floor(Math.random() * 57) + 1 + "%"*/
+        let messegeInMessenger = document.getElementById("miniMessenger");
+        messegeInMessenger.innerHTML = "<div>Look! She appeared again in a random place. I'm going to a work. Can you follow my lama? And her name is Betty</div>"
+        water.onclick = function () {
+            fon.style.left = "550px";
+            fon.style.top = "300px";
+            messegeInMessenger.innerHTML += "<p>Wow! She is drinking some water. Keep up the good work!</p>"
+            console.log("550px")
+            console.log("300px")
+        }
+        let grass = document.getElementById("grass");
+        grass.onclick = function () {
+            fon.style.left = "550px";
+            fon.style.top = "100px";
+            messegeInMessenger.innerHTML += "<p>I can't belive! She is eating  grass. Go next!</p>"
+            console.log("550px")
+            console.log("100px")
+        }
+        let meat = document.getElementById("meat");
+        meat.onclick = function () {
+            fon.style.left = "800px";
+            fon.style.top = "-80px";
+            messegeInMessenger.innerHTML += "<p> She is walking in a forest. Take her from there</p>"
+            console.log("700px")
+            console.log("0px")
+        }
+        let study = document.getElementById("study");
+        study.onclick = function () {
+            fon.style.left = "200px";
+            fon.style.top = "200px";
+            messegeInMessenger.innerHTML += "<p> Ow my God! She is studying. It's so good)</p>"
+            console.log("200px")
+            console.log("200px")
+        }
+        let playing = document.getElementById("playing");
+        playing.onclick = function () {
+            fon.style.left = "00px";
+            fon.style.top = "00px";
+            messegeInMessenger.innerHTML += "<p> She is playing in a her room. It's so cute.</p>"
+            console.log("200px")
+            console.log("100px")
+        }
+        let pogladit = document.getElementById("pogladit");
+        pogladit.onclick = function () {
+            fon.style.left = "0px";
+            fon.style.top = "500px";
+            messegeInMessenger.innerHTML += "<p>Can you pet her please? She wants it</p>"
+            console.log("200px")
+            console.log("700px")
+        }
+        let cut = document.getElementById("cutting");
+        cut.onclick = function () {
+            fon.style.left = "500px";
+            fon.style.top = "500px";
+            messegeInMessenger.innerHTML += "<p> Cut her fur.</p>"
+            console.log("700px")
+            console.log("700px")
+        }
+        let btn = document.getElementById("btn");
+        btn.onclick = function() {
+        messegeInMessenger.innerHTML = "Look! She appeared again in a random place. I'm going to awork. Can you follow my lama? And her name is Betty</div>"
+        }
+    </script>
+</body>
+
+</html>
